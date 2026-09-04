@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch('/api/projects');
+        const res = await fetch('https://project-showcase-uadg.onrender.com/api/projects');
         if (!res.ok) throw new Error(`Server error: ${res.status}`);
         const data = await res.json();
         setProjects(data);

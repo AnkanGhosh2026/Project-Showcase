@@ -25,7 +25,7 @@ const CTASection = () => {
               </a>
               <a
                 id="cta-github-btn"
-                href="https://github.com/"
+                href="https://github.com/AnkanGhosh2026?tab=repositories"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-btn-secondary"

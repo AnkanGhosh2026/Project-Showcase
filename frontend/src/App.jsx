@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
+import Chatbot from './components/Chatbot';
 
 import ProjectGrid from './components/ProjectGrid';
 import CTASection from './components/CTASection';
@@ -77,6 +78,7 @@ function App() {
       </main>
 
       <Footer />
+      <Chatbot />
     </div>
   );
 }

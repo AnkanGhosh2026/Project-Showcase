@@ -26,11 +26,6 @@ const HeroSection = ({ projectCount }) => {
           <div className="hero-stat-number">3+</div>
           <div className="hero-stat-label">AI Agents</div>
         </div>
-        <div className="hero-stat-divider" />
-        <div className="hero-stat">
-          <div className="hero-stat-number">100%</div>
-          <div className="hero-stat-label">Live &amp; Deployed</div>
-        </div>
       </div>
     </section>
   );

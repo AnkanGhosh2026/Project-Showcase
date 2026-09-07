@@ -21,6 +21,7 @@ class Project(BaseModel):
     url: str
     emoji: str
     color: str
+    image: str
 
 
 PROJECTS: List[Project] = [
@@ -32,6 +33,7 @@ PROJECTS: List[Project] = [
         url="https://lead-gen-v01-frontend.onrender.com/",
         emoji="🎯",
         color="#6366f1",
+        image="/images/lead-gen.png"
     ),
     Project(
         id=2,
@@ -41,6 +43,7 @@ PROJECTS: List[Project] = [
         url="https://agriculture-1-bhqx.onrender.com/",
         emoji="🌿",
         color="#22c55e",
+        image="/images/crop.png"
     ),
     Project(
         id=3,
@@ -50,6 +53,7 @@ PROJECTS: List[Project] = [
         url="https://presalesaiagent.vestaging.in/",
         emoji="🤝",
         color="#f59e0b",
+        image="/images/presales.png"
     ),
     Project(
         id=4,
@@ -59,6 +63,7 @@ PROJECTS: List[Project] = [
         url="https://travel-content-automation-agent-1.onrender.com/",
         emoji="✈️",
         color="#0ea5e9",
+        image="/images/travel.png"
     ),
     Project(
         id=5,
@@ -68,6 +73,7 @@ PROJECTS: List[Project] = [
         url="https://edubridge-1-ntxj.onrender.com/",
         emoji="📚",
         color="#a855f7",
+        image="/images/edubridge.png"
     ),
     Project(
         id=6,
@@ -77,6 +83,7 @@ PROJECTS: List[Project] = [
         url="https://kosherstay2.vercel.app/",
         emoji="🏨",
         color="#ec4899",
+        image="/images/kosherstay.png"
     ),
 ]
 

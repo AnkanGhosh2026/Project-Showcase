@@ -14,10 +14,7 @@ const Navbar = () => {
         </a>
 
         <div className="navbar-links">
-          <button className="nav-link" onClick={() => scrollTo('about')}>About</button>
-          <button className="nav-link" onClick={() => scrollTo('skills')}>Skills</button>
           <button className="nav-link" onClick={() => scrollTo('projects')}>Projects</button>
-          <button className="nav-link" onClick={() => scrollTo('process')}>Process</button>
           <button className="nav-link nav-link-cta" onClick={() => scrollTo('contact')}>Contact →</button>
         </div>
       </div>

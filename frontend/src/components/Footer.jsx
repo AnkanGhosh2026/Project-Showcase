@@ -3,9 +3,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <p className="footer-name">
+        {/* <p className="footer-name">
           Built by <span>Ankan Ghosh</span>
-        </p>
+        </p> */}
         <p className="footer-copy">© {year} · All projects are live & deployed</p>
       </div>
     </footer>

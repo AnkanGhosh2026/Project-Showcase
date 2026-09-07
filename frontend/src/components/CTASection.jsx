@@ -34,11 +34,6 @@ const CTASection = () => {
               </a>
             </div>
 
-            <div className="cta-badges">
-              <span className="cta-badge">✅ Open to freelance</span>
-              <span className="cta-badge">✅ Remote-friendly</span>
-              <span className="cta-badge">✅ Quick turnaround</span>
-            </div>
           </div>
         </div>
       </div>

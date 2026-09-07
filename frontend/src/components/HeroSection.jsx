@@ -12,8 +12,7 @@ const HeroSection = ({ projectCount }) => {
       </h1>
 
       <p className="hero-subtitle">
-        Explore AI agents, automation systems, and web applications I've built —
-        each solving real-world problems with cutting-edge technology.
+        Explore AI agents, automation systems, and web applications I've built.
       </p>
 
       <div className="hero-stats">

@@ -22,6 +22,7 @@ const timelineData = [
     color: "#34d399",
     glow: "rgba(52, 211, 153, 0.4)",
     items: [
+      { title: "VE Lead Generator", desc: "B2B lead generation dashboard", icon: <Target size={20} /> },
       { title: "Travel Content Agent", desc: "RSS → AI content → social posting", icon: <Activity size={20} /> }
     ]
   },

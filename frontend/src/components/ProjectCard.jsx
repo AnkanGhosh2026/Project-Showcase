@@ -35,8 +35,6 @@ const ProjectCard = ({ project }) => {
         position: 'relative'
       }}>
         <img src={imageUrl} alt={project.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)' }}></div>
-        <div style={{ position: 'absolute', bottom: '16px', left: '16px', fontSize: '32px' }}>{project.emoji}</div>
       </div>
 
       <span className="card-badge">{project.category}</span>

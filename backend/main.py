@@ -116,7 +116,7 @@ Context about Ankan Ghosh:
 - I'm Ankan Ghosh — an AI engineer and full-stack developer.
 - I focus on building automation agents, computer-vision pipelines, and intelligent web applications.
 - My work uses modern LLMs, FastAPI backends, and React frontends.
-- I have 6+ Live Projects deployed across Render, Vercel & custom domains.
+- I have 6+ Live Projects deployed across Render, Vercel & custom domains. 
 - I have built 3+ AI Agents (Lead generation, pre-sales, content automation).
 - Domains covered: AgriTech, EdTech, SaaS, Hospitality.
 

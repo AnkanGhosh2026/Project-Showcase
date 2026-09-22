@@ -1,41 +1,20 @@
+import { Rocket } from 'lucide-react';
+
 const CTASection = () => {
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="cta-section" id="contact">
-      <div className="container">
-        <div className="cta-card">
-          <div className="cta-glow" />
-          <div className="cta-inner">
-            <p className="section-label" style={{ textAlign: 'center' }}>Let's Connect</p>
-            <h2 className="cta-title">
-              Have a Project in Mind?<br />
-              <span className="gradient-text">Let's Build It Together.</span>
-            </h2>
-            <p className="cta-subtitle">
-              Whether you need an AI agent, a full-stack web app, or an automation
-              system — I'm always open to new challenges. Reach out and let's talk.
-            </p>
-
-            <div className="cta-actions">
-              <a
-                id="cta-email-btn"
-                href="mailto:ankanghosh@example.com"
-                className="cta-btn-primary"
-              >
-                ✉️ &nbsp;Get In Touch
-              </a>
-              <a
-                id="cta-github-btn"
-                href="https://github.com/AnkanGhosh2026?tab=repositories"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-btn-secondary"
-              >
-                🐙 &nbsp;View GitHub
-              </a>
-            </div>
-
-          </div>
-        </div>
+      <div className="cta-container">
+        <h2 className="cta-title">Ready to build something <span className="gradient-text">extraordinary?</span></h2>
+        <p className="cta-subtitle">
+          Whether you need a custom AI agent, a scalable web application, or automated data pipelines, I'm here to help turn your ideas into reality.
+        </p>
+        <button className="btn-primary" style={{ margin: '0 auto' }} onClick={() => scrollTo('contact')}>
+          <Rocket size={18} /> Start a Project
+        </button>
       </div>
     </section>
   );

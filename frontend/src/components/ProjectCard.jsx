@@ -1,3 +1,5 @@
+import { ArrowRight, ExternalLink } from 'lucide-react';
+
 const projectImages = {
   "Lead Gen Automation Agent": "/images/leadgen.png",
   "AI Crop Disease Detection": "/images/cropsense.png",
@@ -9,20 +11,6 @@ const projectImages = {
 };
 
 const ProjectCard = ({ project }) => {
-  // Derive badge colors from the project's accent color with opacity
-  const hexToRgba = (hex, alpha) => {
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-  };
-
-  const cardStyle = {
-    '--card-color': project.color,
-    '--badge-bg': hexToRgba(project.color, 0.1),
-    '--badge-border': hexToRgba(project.color, 0.25),
-  };
-
   const handleVisit = (e) => {
     e.preventDefault();
     window.open(project.url, '_blank', 'noopener,noreferrer');
@@ -31,54 +19,39 @@ const ProjectCard = ({ project }) => {
   const imageUrl = projectImages[project.name] || "/images/kosherstay.png";
 
   return (
-    <div
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
       className="project-card"
-      style={cardStyle}
-      role="article"
       aria-label={`Project: ${project.name}`}
     >
-      {/* Top glow layer */}
-      <div className="card-glow" style={{ '--card-color': project.color }} />
-
-      {/* Project Image Side */}
-      <div className="card-image-wrapper">
-        <img src={imageUrl} alt={`${project.name} interface`} className="card-image" />
-        <div className="card-image-overlay"></div>
+      <div className="card-image-banner" style={{
+        height: '160px',
+        width: '100%',
+        marginBottom: '24px',
+        borderRadius: '16px',
+        overflow: 'hidden',
+        position: 'relative'
+      }}>
+        <img src={imageUrl} alt={project.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)' }}></div>
+        <div style={{ position: 'absolute', bottom: '16px', left: '16px', fontSize: '32px' }}>{project.emoji}</div>
       </div>
 
-      {/* Project Details Side */}
-      <div className="card-content">
-        {/* Header: icon + name */}
-        <div className="card-header">
-          <div
-            className="card-icon-wrapper"
-            aria-hidden="true"
-            style={{ boxShadow: `0 4px 20px ${hexToRgba(project.color, 0.2)}` }}
-          >
-            {project.emoji}
-          </div>
-          <div className="card-header-text">
-            <h2 className="card-name">{project.name}</h2>
-            <span className="card-badge">{project.category}</span>
-          </div>
-        </div>
+      <span className="card-badge">{project.category}</span>
+      <h2 className="card-name">{project.name}</h2>
+      <p className="card-description">{project.description}</p>
 
-        {/* Description */}
-        <p className="card-description">{project.description}</p>
-
-        {/* CTA */}
-        <div className="card-cta">
-          <button
-            id={`visit-project-${project.id}`}
-            className="card-link-btn"
-            onClick={handleVisit}
-            aria-label={`Visit ${project.name} — opens in new tab`}
-          >
-            Visit Project <span className="card-arrow">→</span>
-          </button>
+      <div className="card-cta">
+        <span className="card-link-btn">
+          Explore Project
+        </span>
+        <div className="card-arrow">
+          <ExternalLink size={16} />
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

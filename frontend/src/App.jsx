@@ -6,6 +6,7 @@ import Chatbot from './components/Chatbot';
 import ProjectGrid from './components/ProjectGrid';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
+import ProgressSection from './components/ProgressSection';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -18,7 +19,18 @@ function App() {
         const res = await fetch('https://project-showcase-uadg.onrender.com/api/projects');
         if (!res.ok) throw new Error(`Server error: ${res.status}`);
         const data = await res.json();
-        
+
+        // Update EduBridge description locally
+        const updatedData = data.map(project => {
+          if (project.name === "EduBridge") {
+            return {
+              ...project,
+              description: "A modern, colourful website for a company that helps Indian students apply to US colleges and universities."
+            };
+          }
+          return project;
+        });
+
         const newProject = {
           id: 7,
           name: "Stubline - Event Management System",
@@ -28,8 +40,8 @@ function App() {
           emoji: "🎫",
           color: "#fbbf24"
         };
-        
-        setProjects([...data, newProject]);
+
+        setProjects([...updatedData, newProject]);
       } catch (err) {
         setError(err.message || 'Failed to load projects.');
       } finally {
@@ -54,8 +66,9 @@ function App() {
       <main>
         {/* 1 — Hero */}
         <HeroSection projectCount={projects.length || 6} />
-
-
+        
+        {/* Journey/Progress Section */}
+        <ProgressSection />
 
         {/* 4 — Projects */}
         <section className="projects-section" id="projects">
@@ -68,7 +81,37 @@ function App() {
               </p>
             </div>
           </div>
-          <ProjectGrid projects={projects} loading={loading} error={error} />
+          <ProjectGrid 
+            projects={projects.filter(p => ![
+              "EduBridge",
+              "Kosher Stay",
+              "Stubline - Event Management System"
+            ].includes(p.name))} 
+            loading={loading} 
+            error={error} 
+          />
+        </section>
+
+        {/* Client Demo */}
+        <section className="projects-section" id="client-demo">
+          <div className="container">
+            <div className="section-header">
+              <p className="section-label">Showcase</p>
+              <h2 className="section-title">Client <span className="gradient-text">Demo</span></h2>
+              <p className="section-subtitle">
+                A curated selection of client projects and proof of concepts.
+              </p>
+            </div>
+          </div>
+          <ProjectGrid 
+            projects={projects.filter(p => [
+              "EduBridge",
+              "Kosher Stay",
+              "Stubline - Event Management System"
+            ].includes(p.name))} 
+            loading={loading} 
+            error={error} 
+          />
         </section>
 
 
